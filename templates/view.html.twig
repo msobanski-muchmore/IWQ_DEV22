@@ -1,0 +1,44 @@
+{% extends "base.html.twig" %}
+{% block title %}
+        <h1>Employee id {{employee.id}} view</h1>
+{% endblock %}
+
+{% block content %}
+        <div class="card" style="width: 50%">
+                <div class="card-body">
+
+                        <div class="row py-2">
+                                <div class="col-4"><span class="badge bg-primary">First name</span></div>
+                                <div class="col-8">{{ employee.firstName }}</div>
+                        </div>
+
+                        <div class="row py-2">
+                                <div class="col-4"><span class="badge bg-primary">Last name</span></div>
+                                <div class="col-8">{{ employee.lastName }}</div>
+                        </div>
+
+                        <div class="row py-2">
+                                <div class="col-4"><span class="badge bg-primary">Address</span></div>
+                                <div class="col-8">{{ employee.address }}</div>
+                        </div>
+                        <div class="row py-2">
+                                <div class="col-4"><span class="badge bg-primary">PESEL</span></div>
+                                <div class="col-8">{{ employee.pesel }}</div>
+                        </div>
+                        <div class="row py-2">
+                                <div class="col-4"><span class="badge bg-primary">Data of birth</span></div>
+                                <div class="col-8">{{ employee.dateOfBirth }}</div>
+                        </div>
+                        <div class="row py-2">
+                                <div class="col-4"><span class="badge bg-primary">Gender</span></div>
+                                <div class="col-8">{{ employee.gender }}</div>
+                        </div>
+                        <div class="row py-4">
+                                <div class="col-12 d-flex justify-content-end">
+                                        <a  class="btn btn-primary" href="{{ path_for('edit',{"id":employee.id})}}">Edit</a>
+                                </div>
+                        </div>
+
+                </div>
+        </div>
+{% endblock %}

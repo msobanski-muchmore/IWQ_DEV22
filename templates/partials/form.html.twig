@@ -1,0 +1,45 @@
+<div class="row py-2">
+    <div class="col-4">
+        <label for="firstName">
+            <span class="badge bg-primary">First name</span>
+        </label>
+    </div>
+    <div class="col-8">
+        <input style="width: 100%" type="text" id="firstName" name="firstName" value="{{ employee.firstName }}" />
+    </div>
+</div>
+
+<div class="row py-2">
+    <div class="col-4">
+        <label for="lastName">
+            <span class="badge bg-primary">Last name</span>
+        </label>
+    </div>
+    <div class="col-8">
+        <input style="width: 100%" type="text" id="lastName" name="lastName" value="{{ employee.lastName }}" />
+    </div>
+</div>
+<div class="row py-2">
+    <div class="col-4">
+        <label for="address">
+            <span class="badge bg-primary">Address</span>
+        </label>
+    </div>
+    <div class="col-8">
+        <input style="width: 100%" type="text" id="address" name="address" value="{{ employee.address }}" />
+    </div>
+</div>
+<div class="row py-2">
+    <div class="col-4">
+        <label for="pesel">
+            <span class="badge bg-primary">PESEL</span>
+        </label>
+    </div>
+    <div class="col-8">
+        <input class="form-control {% if peselErrorMessage != '' %}is-invalid{% endif %}" style="width: 100%" type="text" id="pesel" name="pesel" value="{{ employee.pesel }}" />
+        {% if peselErrorMessage != '' %}
+            <label for="floatingInputInvalid">{{ peselErrorMessage }}</label>
+        {% endif %}
+
+    </div>
+</div>

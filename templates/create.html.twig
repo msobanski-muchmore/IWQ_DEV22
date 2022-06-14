@@ -1,0 +1,38 @@
+{% extends "base.html.twig" %}
+{% block title %}
+        <h1>Create new Employee</h1>
+{% endblock %}
+
+{% block content %}
+        <div class="card" style="width: 50%">
+                <div class="card-body">
+
+                        <form method="post" action="{{ path_for('create_post')}}" >
+
+                             {%  include 'partials/form.html.twig' %}
+
+                                <div class="row py-4">
+                                        <div class="col-12">
+                                                <div class="d-flex justify-content-between">
+
+                                                        <div class="d-flex justify-content-start">
+                                                                <a  class="btn btn-secondary"
+                                                                    href="{{ path_for('index')}}">
+                                                                        Cancel
+                                                                </a>
+                                                        </div>
+                                                        <div class="cd-flex justify-content-end">
+                                                                <button type="submit" name="save"
+                                                                        class="btn btn-success">
+                                                                        Save
+                                                                </button>
+                                                        </div>
+
+                                                </div>
+                                        </div>
+                                </div>
+                        </form>
+
+                </div>
+        </div>
+{% endblock %}

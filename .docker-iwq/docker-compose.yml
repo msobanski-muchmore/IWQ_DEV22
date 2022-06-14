@@ -1,0 +1,36 @@
+version:  '3'
+
+services:
+  web:
+    hostname: iwq_image
+    build:
+      context: ../
+      dockerfile: .docker-iwq/.dockerfile
+    image: iwq_image
+
+    ports:
+      - 80:80
+
+    volumes:
+      - ../:/app
+
+    depends_on:
+      - db
+
+    links:
+      - db
+
+  db:
+    image: mysql:5.7
+    command: mysqld --character-set-server=utf8 --collation-server=utf8_polish_ci
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: pass
+      MYSQL_DATABASE: iwq
+      MYSQL_USER: iwq
+      MYSQL_PASSWORD: pass
+    volumes:
+      - ./mysql:/var/lib/mysql
+
+

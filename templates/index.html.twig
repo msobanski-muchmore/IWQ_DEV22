@@ -1,0 +1,46 @@
+{% extends "base.html.twig" %}
+{% block title %}
+        <h1>Employees</h1>
+{% endblock %}
+
+{% block content %}
+        <table class="table">
+                <thead>
+                <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">First name</th>
+                        <th scope="col">Last name</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">PESEL</th>
+                        <th scope="col">Date of birth</th>
+                        <th scope="col">Gender</th>
+                        <th scope="col"></th>
+                </tr>
+                </thead>
+                <tbody>
+                        {% for e in employees %}
+                                <tr>
+                                        <td>{{ e.id }}</td>
+                                        <td>{{ e.firstName }}</td>
+                                        <td>{{ e.lastName }}</td>
+                                        <td>{{ e.address }}</td>
+                                        <td>{{ e.pesel }}</td>
+                                        <td>{{ e.dateOfBirth }}</td>
+                                        <td>{{ e.gender }}</td>
+                                        <td>
+                                                <ul>
+                                                        <li><a href="{{ path_for('edit',{"id":e.id})}}">Edit</a></li>
+                                                        <li><a href="{{ path_for('view',{"id":e.id})}}">View</a></li>
+                                                </ul>
+
+
+                                        </td>
+                                </tr>
+                        {% endfor %}
+                </tbody>
+
+        </table>
+
+</ul>
+        <a class="btn btn-primary" href="{{ path_for('create')}}">Create new</a>
+{% endblock %}

@@ -1,0 +1,8 @@
+/vendor/
+.docker-iwq/mysql
+.idea
+.DS_Store
+.env
+.env.local
+/var/cache/twig
+/var/cache/doctrine
